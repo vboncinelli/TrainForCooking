@@ -1,10 +1,12 @@
-﻿namespace TrainForCooking.Dto
-{
-    public class Recipe
-    {
-        public int Id { get; set; }
+﻿using TrainForCooking.Common;
 
+namespace TrainForCooking.Dto
+{
+    public class Recipe : BaseEntity
+    {
         public required string Title { get; set; }
+
+        public required string Author { get; set; }
 
         public List<Ingredient> Ingredients { get; set; } = [];
 
@@ -21,5 +23,11 @@
         public required int CategoryId { get; set; }
 
         public Category? Category { get; set; }
+
+        public PriceLevel PriceLevel { get; set; } = PriceLevel.Medium;
+
+        public string? ImageUrl { get; set; }
+
+        public Difficulty Difficulty { get; set; } = Difficulty.Medium;
     }
 }

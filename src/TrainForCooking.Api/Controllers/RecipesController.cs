@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TrainForCooking.Dto;
 
 namespace TrainForCooking.Api.Controllers
@@ -36,6 +35,7 @@ namespace TrainForCooking.Api.Controllers
                 CookingTimeInMinutes = 10,
                 PreparationTimeInMinutes = 20,
                 Ingredients = ingredients,
+                ImageUrl = "spaghetti_carbonara.jpg",
                 Instructions = "Cuocere gli spaghetti in acqua bollente..."
             };
 

@@ -3,10 +3,8 @@ using TrainForCooking.Common;
 
 namespace TrainForCooking.Dto
 {
-    public class Ingredient
+    public class Ingredient : BaseEntity
     {
-        public int Id { get; set; }
-
         public required string Name { get; set; }
 
         [JsonIgnore]

@@ -1,9 +1,7 @@
 ﻿namespace TrainForCooking.Dto
 {
-    public class Category
+    public class Category : BaseEntity
     {
-        public int Id { get; set; }
-
         public required string Name { get; set; }
     }
 }
