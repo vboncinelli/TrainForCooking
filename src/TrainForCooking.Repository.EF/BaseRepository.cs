@@ -34,7 +34,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -52,7 +52,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -69,7 +69,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -86,7 +86,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -110,7 +110,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -134,7 +134,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -157,7 +157,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -181,7 +181,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -209,7 +209,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -236,7 +236,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -252,7 +252,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -268,7 +268,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -305,7 +305,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
@@ -341,7 +341,7 @@ namespace TrainForCooking.Repository.EF
             }
             catch (Exception ex)
             {
-                throw new DataAccessException(ex.Message, ex);
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
         }
 
