@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrainForCooking.Common\TrainForCooking.Common.csproj" />
+    <ProjectReference Include="..\TrainForCooking.Dto\TrainForCooking.Dto.csproj" />
+    <ProjectReference Include="..\TrainForCooking.Repository.EF\TrainForCooking.Repository.EF.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using TrainForCooking.Common;
+using TrainForCooking.Interfaces;
+using TrainForCooking.Repository.EF;
 namespace TrainForCooking.Api
 {
     public class Program
@@ -8,6 +10,8 @@ namespace TrainForCooking.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
+            
             builder.Services
                 .AddControllers()
                 .AddJsonOptions(x =>

@@ -6,7 +6,7 @@ using TrainForCooking.Interfaces;
 namespace TrainForCooking.Repository.EF
 {
     public abstract class BaseRepository<TEntity> : IRepository<TEntity>
-        where TEntity : BaseEntity, new()
+        where TEntity : BaseEntity
     {
 
         protected readonly RecipesContext _context;
@@ -16,6 +16,8 @@ namespace TrainForCooking.Repository.EF
         public BaseRepository()
         {
             _context = new RecipesContext();
+
+            _context.Database.EnsureCreated();
         }
 
         /// <summary>

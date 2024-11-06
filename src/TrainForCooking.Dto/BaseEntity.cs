@@ -1,4 +1,6 @@
-﻿namespace TrainForCooking.Dto
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TrainForCooking.Dto
 {
     public abstract class BaseEntity
     {

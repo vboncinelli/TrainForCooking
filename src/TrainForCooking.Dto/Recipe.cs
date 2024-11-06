@@ -8,7 +8,7 @@ namespace TrainForCooking.Dto
 
         public required string Author { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; } = [];
+        public List<RecipeIngredient> RecipeIngredients { get; set; } = [];
 
         public required string Instructions { get; set; }
 

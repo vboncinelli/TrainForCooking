@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TrainForCooking.Dto;
+using TrainForCooking.Interfaces;
 
 namespace TrainForCooking.Api.Controllers
 {
@@ -7,38 +8,17 @@ namespace TrainForCooking.Api.Controllers
     [ApiController]
     public class RecipesController : ControllerBase
     {
+        private readonly IRecipeRepository _repo;
+
+        public RecipesController(IRecipeRepository repo)
+        {
+            _repo = repo;
+        }
+
         [HttpGet("{id:int}")]
         public IActionResult GetRecipe(int id)
         {
-            if (id == 4)
-            {
-                return NotFound();
-            }
-
-            var category = new Category() { Id = 1, Name = "Primi Piatti" };
-            var cusine = new Cuisine() { Id = 1, Name = "Italiana" };
-
-            var ingredients = new List<Ingredient>
-            {
-                new() {Id = 1, Name = "Spaghetti", Quantity = 400, UnitOfMeasure = UnitOfMeasure.Gram }
-
-            };
-
-            var recipe = new Recipe()
-            {
-                Id = id,
-                Author = "Artusi",
-                Title = "Spaghetti alla carbonara",
-                CategoryId = category.Id,
-                Category = category,
-                Cuisine = cusine,
-                CuisineId = cusine.Id,
-                CookingTimeInMinutes = 10,
-                PreparationTimeInMinutes = 20,
-                Ingredients = ingredients,
-                ImageUrl = "spaghetti_carbonara.jpg",
-                Instructions = "Cuocere gli spaghetti in acqua bollente..."
-            };
+            var recipe = _repo.Find(id);
 
             return Ok(recipe);
         }
