@@ -1,0 +1,23 @@
+﻿@model List<string>
+
+
+@if (ViewData.ContainsKey("TeamName"))
+{
+    <h1>We are the @ViewData["TeamName"]</h1>
+}
+<h1>We are @ViewData["MyNumber"]</h1>
+<h2>@ViewData["Title"]</h2>
+@foreach (var member in Model)
+{
+    <p>@member</p>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="https://example.com/style.css" />
+}
+
+@section Scripts {
+    <script src="https://www.example.com/jquery.js"></script>
+}
+
+
