@@ -27,6 +27,7 @@ namespace TrainForCooking.Api.Controllers
             var recipe = new Recipe()
             {
                 Id = id,
+                Author = "Artusi",
                 Title = "Spaghetti alla carbonara",
                 CategoryId = category.Id,
                 Category = category,
