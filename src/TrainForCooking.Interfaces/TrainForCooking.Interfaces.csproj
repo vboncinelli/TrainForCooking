@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TrainForCooking.Common\TrainForCooking.Common.csproj" />
+    <ProjectReference Include="..\TrainForCooking.Dto\TrainForCooking.Dto.csproj" />
   </ItemGroup>
 
 </Project>

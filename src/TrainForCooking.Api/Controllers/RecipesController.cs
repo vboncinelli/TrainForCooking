@@ -19,14 +19,10 @@ namespace TrainForCooking.Api.Controllers
             var category = new Category() { Id = 1, Name = "Primi Piatti" };
             var cusine = new Cuisine() { Id = 1, Name = "Italiana" };
 
-            var ingredients = new Dictionary<string, string>
+            var ingredients = new List<Ingredient>
             {
-                { "Spaghetti", "400 grammi" },
-                { "Uova", "4" },
-                { "Guanciale", "200 grammi" },
-                { "Pecorino", "50 grammi" },
-                { "Pepe", "qb" },
-                { "Sale", "qb" }
+                new() {Id = 1, Name = "Spaghetti", Quantity = 400, UnitOfMeasure = UnitOfMeasure.Gram }
+
             };
 
             var recipe = new Recipe()

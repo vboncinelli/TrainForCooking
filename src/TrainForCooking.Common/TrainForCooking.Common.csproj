@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TrainForCooking.Common\TrainForCooking.Common.csproj" />
-  </ItemGroup>
-
 </Project>

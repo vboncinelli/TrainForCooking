@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainForCooking.Api", "TrainForCooking.Api\TrainForCooking.Api.csproj", "{4CB51394-7AF9-4A6D-B73B-BEA927EA7E29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainForCooking.Api", "TrainForCooking.Api\TrainForCooking.Api.csproj", "{4CB51394-7AF9-4A6D-B73B-BEA927EA7E29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainForCooking.Dto", "TrainForCooking.Dto\TrainForCooking.Dto.csproj", "{3D23CE3D-872F-4613-8E21-1CC5B6443334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrainForCooking.Dto", "TrainForCooking.Dto\TrainForCooking.Dto.csproj", "{3D23CE3D-872F-4613-8E21-1CC5B6443334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainForCooking.Repository.EF", "TrainForCooking.Repository.EF\TrainForCooking.Repository.EF.csproj", "{B928598C-3AAC-4478-BB4E-A4F5C825ABF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainForCooking.Common", "TrainForCooking.Common\TrainForCooking.Common.csproj", "{37EAA7FE-FA7D-4BEB-8378-67FEECF6D85F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainForCooking.Interfaces", "TrainForCooking.Interfaces\TrainForCooking.Interfaces.csproj", "{DC6FD4E4-C805-4B66-82BF-03F95CB18F0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{3D23CE3D-872F-4613-8E21-1CC5B6443334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D23CE3D-872F-4613-8E21-1CC5B6443334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D23CE3D-872F-4613-8E21-1CC5B6443334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B928598C-3AAC-4478-BB4E-A4F5C825ABF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B928598C-3AAC-4478-BB4E-A4F5C825ABF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B928598C-3AAC-4478-BB4E-A4F5C825ABF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B928598C-3AAC-4478-BB4E-A4F5C825ABF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EAA7FE-FA7D-4BEB-8378-67FEECF6D85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EAA7FE-FA7D-4BEB-8378-67FEECF6D85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EAA7FE-FA7D-4BEB-8378-67FEECF6D85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EAA7FE-FA7D-4BEB-8378-67FEECF6D85F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6FD4E4-C805-4B66-82BF-03F95CB18F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6FD4E4-C805-4B66-82BF-03F95CB18F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6FD4E4-C805-4B66-82BF-03F95CB18F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6FD4E4-C805-4B66-82BF-03F95CB18F0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
