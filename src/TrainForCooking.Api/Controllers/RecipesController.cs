@@ -19,11 +19,19 @@ namespace TrainForCooking.Api.Controllers
         {
             var recipe = await _repo.FindAsync(id);
 
-            //TODO: Cosa possiamo fare se la ricetta è null?
+            if (recipe is null)
+                return NotFound();
 
             return Ok(recipe);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetRecipesAsync([FromQuery] int page, int pageSize, int? categoryId = null, int? cuisineId = null)
+        {
+            var recipes = await _repo.GetRecipesByCategoryAndCuisineAsync(page, pageSize, categoryId, cuisineId);
+
+            return Ok(recipes);
+        }
         // TODO:
         // 1 - Implementare uno o più metodi che restituiscano una lista di ricette (get)
         //     Ci sono almeno due opzioni:

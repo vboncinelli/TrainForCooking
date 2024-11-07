@@ -14,13 +14,10 @@ namespace TrainForCooking.Mvc.Controllers
             _recipeService = recipeService;
         }
 
-        // GET: RecipeController
-        public ActionResult Index()
+        // GET: Recipes
+        public async Task<ActionResult> List([FromQuery]int page = 1, int pageSize = 20, int? categoryId = null, int? cuisineId = null)
         {
-            // TODO: Chiamare le API per recuperare l'elenco delle ricette
-            // Cliccando su una ricetta, andiamo nella pagina di dettaglio
-
-            // TODO (opzionale): Implementare la paginazione
+            var recipes = await _recipeService.GetRecipesAsync(page, pageSize, categoryId, cuisineId);
 
             return View();
         }

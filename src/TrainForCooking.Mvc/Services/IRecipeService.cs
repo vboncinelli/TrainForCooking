@@ -7,5 +7,7 @@ namespace TrainForCooking.Mvc.Services
         Task<RecipeViewModel?> GetRecipeAsync(int id);
 
         Task<PagedCollectionViewModel<CategoryViewModel>> GetCategoriesAsync(int page, int pageSize);
+
+        Task<PagedCollectionViewModel<RecipeViewModel>> GetRecipesAsync(int page, int pageSize, int? categoryId = null, int? cuisineId = null);
     }
 }

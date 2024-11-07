@@ -29,17 +29,33 @@ namespace TrainForCooking.Mvc.Services
                 throw;
             }
         }
+        
+        public async Task<PagedCollectionViewModel<RecipeViewModel>> GetRecipesAsync(int page, int pageSize, int? categoryId = null, int? cuisineId = null)
+        {
+            try
+            {
+                var request = new RestRequest($"recipes?page={page}&pageSize={pageSize}&categoryId={categoryId}&cuisineId={cuisineId}");
+
+                var result = await _client.GetAsync<PagedCollectionViewModel<RecipeViewModel>>(request);
+
+                return result ?? new PagedCollectionViewModel<RecipeViewModel>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public async Task<PagedCollectionViewModel<CategoryViewModel>> GetCategoriesAsync(int page, int pageSize)
         {
             try
             {
-                // Quale usare dipende dalle API: ricevono i parametri da url o query string?
+                // TODO: Quale usare dipende dalle API: ricevono i parametri da url o query string?
                 
                 // nel caso di url...
                 var request = new RestRequest($"categories/{page}/{pageSize}");
 
-                // ...oppure query string
+                // ...se da query string:
                 //var request = new RestRequest($"categories?page={page}&pageSize={pageSize}");
 
                 var result  = await _client.GetAsync<PagedCollectionViewModel<CategoryViewModel>>(request);
