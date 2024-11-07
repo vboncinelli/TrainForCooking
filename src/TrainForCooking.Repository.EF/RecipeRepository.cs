@@ -47,10 +47,7 @@ namespace TrainForCooking.Repository.EF
         {
             try
             {
-                var query = _context
-                    .Set<Recipe>()
-                    .Where(e => e.CategoryId == categoryId)
-                    .AsQueryable();
+                var query = GetBaseQueryForList(categoryId: categoryId);
 
                 var count = query.Count();
 
@@ -78,10 +75,7 @@ namespace TrainForCooking.Repository.EF
         {
             try
             {
-                var query = _context
-                    .Set<Recipe>()
-                    .Where(e => e.CategoryId == categoryId)
-                    .AsQueryable();
+                var query = this.GetBaseQueryForList(categoryId);
 
                 var count = await query.CountAsync();
 
@@ -109,10 +103,7 @@ namespace TrainForCooking.Repository.EF
         {
             try
             {
-                var query = _context
-                    .Set<Recipe>()
-                    .Where(e => e.CuisineId == cuisineId)
-                    .AsQueryable();
+                var query = GetBaseQueryForList(cuisineId: cuisineId);
 
                 var count = query.Count();
 
@@ -139,10 +130,7 @@ namespace TrainForCooking.Repository.EF
         {
             try
             {
-                var query = _context
-                    .Set<Recipe>()
-                    .Where(e => e.CuisineId == cuisineId)
-                    .AsQueryable();
+                var query = GetBaseQueryForList(cuisineId: cuisineId);
 
                 var count = await query.CountAsync();
 
@@ -163,6 +151,77 @@ namespace TrainForCooking.Repository.EF
             {
                 throw new DataAccessException("Something went wrong while accessing the data", ex);
             }
+        }
+
+        public PagedCollection<Recipe> GetRecipesByCategoryAndCuisine(int page, int pageSize, int? categoryId = null, int? cuisineId = null)
+        {
+            try
+            {
+                IQueryable<Recipe> query = GetBaseQueryForList(categoryId, cuisineId);
+
+                var count = query.Count();
+
+                var recipes = query
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToList();
+
+                return new()
+                {
+                    Items = recipes,
+                    Page = page,
+                    PageSize = pageSize,
+                    TotalItemCount = count
+                };
+
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
+            }
+        }
+
+        public async Task<PagedCollection<Recipe>> GetRecipesByCategoryAndCuisineAsync(int page, int pageSize, int? categoryId = null, int? cuisineId = null)
+        {
+            try
+            {
+                IQueryable<Recipe> query = GetBaseQueryForList(categoryId, cuisineId);
+
+                var count = await query.CountAsync();
+
+                var recipes = await query
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                return new()
+                {
+                    Items = recipes,
+                    Page = page,
+                    PageSize = pageSize,
+                    TotalItemCount = count
+                };
+
+            }
+            catch (Exception ex)
+            {
+                throw new DataAccessException("Something went wrong while accessing the data", ex);
+            }
+        }
+
+        private IQueryable<Recipe> GetBaseQueryForList(int? categoryId = null, int? cuisineId = null)
+        {
+            var query = _context
+                .Set<Recipe>()
+                .AsQueryable();
+
+            if (categoryId is not null)
+                query = query.Where(e => e.CategoryId == categoryId);
+
+            if (cuisineId is not null)
+                query = query.Where(e => e.CuisineId == cuisineId);
+
+            return query;
         }
     }
 }

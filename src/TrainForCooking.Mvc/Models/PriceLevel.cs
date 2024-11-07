@@ -1,4 +1,4 @@
-﻿namespace TrainForCooking.Dto
+﻿namespace TrainForCooking.Mvc.Models
 {
     public enum PriceLevel
     {

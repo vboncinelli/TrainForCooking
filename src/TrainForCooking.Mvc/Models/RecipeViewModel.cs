@@ -1,10 +1,9 @@
-﻿using System.Text.Json.Serialization;
-using TrainForCooking.Common;
-
-namespace TrainForCooking.Dto
+﻿namespace TrainForCooking.Mvc.Models
 {
-    public class Recipe : BaseEntity
+    public class RecipeViewModel
     {
+        public int Id { get; set; }
+
         public required string Title { get; set; }
 
         public required string Author { get; set; }
@@ -19,11 +18,11 @@ namespace TrainForCooking.Dto
 
         public required int CuisineId { get; set; }
 
-        public Cuisine? Cuisine { get; set; }
+        public CuisineViewModel? Cuisine { get; set; }
 
         public required int CategoryId { get; set; }
 
-        public Category? Category { get; set; }
+        public CategoryViewModel? Category { get; set; }
 
         public PriceLevel PriceLevel { get; set; } = PriceLevel.Medium;
 

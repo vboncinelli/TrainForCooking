@@ -11,5 +11,9 @@ namespace TrainForCooking.Interfaces
         PagedCollection<Recipe> GetRecipesByCuisineId(int cuisineId, int page, int pageSize);
 
         Task<PagedCollection<Recipe>> GetRecipesByCuisineIdAsync(int cuisineId, int page, int pageSize);
+
+        PagedCollection<Recipe> GetRecipesByCategoryAndCuisine(int page, int pageSize, int? categoryId = null, int? cuisineId = null);
+
+        Task<PagedCollection<Recipe>> GetRecipesByCategoryAndCuisineAsync(int page, int pageSize, int? categoryId = null, int? cuisineId = null);
     }
 }

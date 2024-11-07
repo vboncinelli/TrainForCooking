@@ -1,9 +1,7 @@
 ﻿namespace TrainForCooking.Dto
 {
-    public class Cuisine
-    {
-        public int Id { get; set; }
-
+    public class Cuisine : BaseEntity
+    { 
         public required string Name { get; set; }
     }
 }

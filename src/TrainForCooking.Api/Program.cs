@@ -17,10 +17,10 @@ namespace TrainForCooking.Api
                 .AddJsonOptions(x =>
             {
                 // serialize enums as strings in api responses (e.g. Role)
-                x
-                .JsonSerializerOptions
-                .Converters
-                .Add(new JsonStringEnumConverter());
+                //x
+                //.JsonSerializerOptions
+                //.Converters
+                //.Add(new JsonStringEnumConverter());
             });
 
 

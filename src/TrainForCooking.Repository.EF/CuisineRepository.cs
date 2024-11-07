@@ -3,7 +3,7 @@ using TrainForCooking.Interfaces;
 
 namespace TrainForCooking.Repository.EF
 {
-    public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
+    public class CuisineRepository : BaseRepository<Cuisine>, ICuisineRepository
     {
     }
 }

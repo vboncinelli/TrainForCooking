@@ -1,3 +1,5 @@
+using TrainForCooking.Mvc.Services;
+
 namespace TrainForCooking.Mvc
 {
     public class Program
@@ -5,6 +7,8 @@ namespace TrainForCooking.Mvc
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddScoped<IRecipeService, RecipeService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
