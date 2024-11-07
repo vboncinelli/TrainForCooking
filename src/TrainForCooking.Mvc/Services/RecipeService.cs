@@ -34,7 +34,7 @@ namespace TrainForCooking.Mvc.Services
         {
             try
             {
-                // Quale usare dipende dalle API: ricevono i parametri da url o query string?
+                // TODO: Quale usare dipende dalle API: ricevono i parametri da url o query string?
                 
                 // nel caso di url...
                 var request = new RestRequest($"categories/{page}/{pageSize}");
