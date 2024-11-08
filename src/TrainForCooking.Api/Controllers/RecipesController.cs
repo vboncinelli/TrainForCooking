@@ -9,7 +9,7 @@ namespace TrainForCooking.Api.Controllers
     {
         private readonly IRecipeRepository _repo;
 
-        public RecipesController(IRecipeRepository repo, IConfiguration configuration)
+        public RecipesController(IRecipeRepository repo)
         {
             _repo = repo;
         }
