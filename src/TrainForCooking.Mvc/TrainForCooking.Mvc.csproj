@@ -16,8 +16,4 @@
     <ProjectReference Include="..\TrainForCooking.Common\TrainForCooking.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Recipe\" />
-  </ItemGroup>
-
 </Project>

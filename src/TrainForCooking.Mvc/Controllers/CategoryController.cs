@@ -16,7 +16,7 @@ namespace TrainForCooking.Mvc.Controllers
         {
             var categories = await _recipeService.GetCategoriesAsync(page, pageSize);
 
-            return View();
+            return View(categories);
         }
     }
 }

@@ -77,5 +77,22 @@ namespace TrainForCooking.Mvc.Services
                 throw;
             }
         }
+
+        public async Task<RecipeViewModel?> CreateRecipeAsync(RecipeViewModel recipe)
+        {
+            try
+            {
+                var request = new RestRequest("recipes");
+
+                var result = await _client.PostAsync<RecipeViewModel>(request);
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

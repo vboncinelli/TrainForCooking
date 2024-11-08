@@ -12,10 +12,11 @@ namespace TrainForCooking.Mvc.Controllers
             _recipeService = recipeService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 20)
         {
-            var cuisines = await _recipeService.
-            return View();
+            var cuisines = await _recipeService.GetCuisinesAsync(page, pageSize);
+
+            return View(cuisines);
         }
     }
 }

@@ -12,5 +12,7 @@ namespace TrainForCooking.Mvc.Services
         
         Task<PagedCollectionViewModel<CuisineViewModel>> GetCuisinesAsync(int page, int pageSize);
 
+        Task<RecipeViewModel?> CreateRecipeAsync(RecipeViewModel recipe);
+
     }
 }

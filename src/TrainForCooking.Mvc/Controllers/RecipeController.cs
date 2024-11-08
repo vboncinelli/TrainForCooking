@@ -19,7 +19,7 @@ namespace TrainForCooking.Mvc.Controllers
         {
             var recipes = await _recipeService.GetRecipesAsync(page, pageSize, categoryId, cuisineId);
 
-            return View();
+            return View(recipes);
         }
 
         // GET: Recipe/Details/5
@@ -44,7 +44,7 @@ namespace TrainForCooking.Mvc.Controllers
                 // TODO: Testare se funziona in caso di errore... o trovare un'alternativa
                 // es. redirect verso un'altra azione (quale?)
 
-                return View("Error", new ErrorViewModel
+                return RedirectToAction("Home", "Error", new ErrorViewModel
                 {
                     RequestId = HttpContext.TraceIdentifier,
                     Message = "Something went wrong during the operation..."
@@ -58,14 +58,34 @@ namespace TrainForCooking.Mvc.Controllers
             return View();
         }
 
-        // POST: RecipeController/Create
+        // POST: Recipe/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(IFormCollection collection)
         {
             try
             {
-                // TODO: Salvare la ricetta chiamando le API
+                if (ModelState.IsValid)
+                {
+                    var recipe = new RecipeViewModel
+                    {
+                        Title = collection["Title"]!,
+                        Author = collection["Author"]!,
+                        CategoryId = int.Parse(collection["CategoryId"]!),
+                        CuisineId = int.Parse(collection["CuisineId"]!),
+                        Difficulty = (Difficulty)Enum.Parse(typeof(Difficulty), collection["Difficulty"]!),
+                        CookingTimeInMinutes = int.Parse(collection["CookingTimeInMinutes"]),
+                        PriceLevel = (PriceLevel)Enum.Parse(typeof(PriceLevel), collection["PriceLevel"]!),
+                        Instructions = collection["Instructions"]!,
+                        PreparationTimeInMinutes = int.Parse(collection["PreparationTimeInMinutes"]),
+                        ImageUrl = collection["ImageUrl"]
+                    };
+                    // Save the recipe to the database or perform other actions
+
+                    var created = await _recipeService.CreateRecipeAsync(recipe);
+
+                    return RedirectToAction("Index");
+                }
 
                 return RedirectToAction(nameof(Index));
             }

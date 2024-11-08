@@ -1,0 +1,78 @@
+﻿@model TrainForCooking.Mvc.Models.RecipeViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RecipeViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instructions" class="control-label"></label>
+                <input asp-for="Instructions" class="form-control" />
+                <span asp-validation-for="Instructions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CookingTimeInMinutes" class="control-label"></label>
+                <input asp-for="CookingTimeInMinutes" class="form-control" />
+                <span asp-validation-for="CookingTimeInMinutes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PreparationTimeInMinutes" class="control-label"></label>
+                <input asp-for="PreparationTimeInMinutes" class="form-control" />
+                <span asp-validation-for="PreparationTimeInMinutes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CuisineId" class="control-label"></label>
+                <input asp-for="CuisineId" class="form-control" />
+                <span asp-validation-for="CuisineId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <input asp-for="CategoryId" class="form-control" />
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceLevel" class="control-label"></label>
+                <input asp-for="PriceLevel" class="form-control" />
+                <span asp-validation-for="PriceLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Difficulty" class="control-label"></label>
+                <input asp-for="Difficulty" class="form-control" />
+                <span asp-validation-for="Difficulty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
