@@ -49,18 +49,28 @@ namespace TrainForCooking.Mvc.Services
         public async Task<PagedCollectionViewModel<CategoryViewModel>> GetCategoriesAsync(int page, int pageSize)
         {
             try
-            {
-                // TODO: Quale usare dipende dalle API: ricevono i parametri da url o query string?
-                
-                // nel caso di url...
-                var request = new RestRequest($"categories/{page}/{pageSize}");
-
-                // ...se da query string:
-                //var request = new RestRequest($"categories?page={page}&pageSize={pageSize}");
+            { 
+                var request = new RestRequest($"categories?page={page}&pageSize={pageSize}");
 
                 var result  = await _client.GetAsync<PagedCollectionViewModel<CategoryViewModel>>(request);
 
                 return result ?? new PagedCollectionViewModel<CategoryViewModel>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<PagedCollectionViewModel<CuisineViewModel>> GetCuisinesAsync(int page, int pageSize)
+        {
+            try
+            {
+                var request = new RestRequest($"cuisines?page={page}&pageSize={pageSize}");
+
+                var result = await _client.GetAsync<PagedCollectionViewModel<CuisineViewModel>>(request);
+
+                return result ?? new PagedCollectionViewModel<CuisineViewModel>();
             }
             catch (Exception)
             {

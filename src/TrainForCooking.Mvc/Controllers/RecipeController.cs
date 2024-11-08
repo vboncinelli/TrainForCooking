@@ -15,7 +15,7 @@ namespace TrainForCooking.Mvc.Controllers
         }
 
         // GET: Recipes
-        public async Task<ActionResult> List([FromQuery]int page = 1, int pageSize = 20, int? categoryId = null, int? cuisineId = null)
+        public async Task<ActionResult> List([FromQuery] int page = 1, int pageSize = 20, int? categoryId = null, int? cuisineId = null)
         {
             var recipes = await _recipeService.GetRecipesAsync(page, pageSize, categoryId, cuisineId);
 
@@ -30,6 +30,12 @@ namespace TrainForCooking.Mvc.Controllers
                 var recipe = await _recipeService.GetRecipeAsync(id);
 
                 //TODO: Cosa fare se recipe è null perché non esiste una ricetta con quell'id?
+                if (recipe is null)
+                    RedirectToAction("Error", "Home", new ErrorViewModel
+                    {
+                        Message = $"Recipe with id {id} not found.",
+                        Code = "404"
+                    });
 
                 return View(recipe);
             }

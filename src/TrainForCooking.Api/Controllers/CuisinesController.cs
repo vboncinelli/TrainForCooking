@@ -17,7 +17,8 @@ namespace TrainForCooking.Api.Controllers
 
         //TODO: Metodo (GET) per recuperare l'elenco delle categorie
 
-        public async Task<PagedCollection<Cuisine>> GetCuisinesAsync(int page = 1, int pageSize = 20)
+        [HttpGet]
+        public async Task<PagedCollection<Cuisine>> GetCuisinesAsync([FromQuery]int page = 1, int pageSize = 20)
         {
             return await _cuisineRepository.GetAllAsync(page, pageSize);
         }

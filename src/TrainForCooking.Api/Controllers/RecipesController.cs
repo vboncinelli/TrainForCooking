@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TrainForCooking.Dto;
 using TrainForCooking.Interfaces;
 
 namespace TrainForCooking.Api.Controllers
@@ -33,8 +34,13 @@ namespace TrainForCooking.Api.Controllers
             return Ok(recipes);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateRecipeAsync([FromBody]Recipe recipe)
+        {
+            await _repo.AddAsync(recipe);
 
-
+            return Ok();
+        }
 
         // 2 - Opzionale: Implementare un metodo per creare una ricetta (post)
         // PS: Preferire, dove possibile, metodi asincroni (async, await, task)
