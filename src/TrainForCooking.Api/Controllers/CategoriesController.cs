@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TrainForCooking.Dto;
 using TrainForCooking.Interfaces;
 
 namespace TrainForCooking.Api.Controllers
@@ -15,5 +16,11 @@ namespace TrainForCooking.Api.Controllers
         }
 
         //TODO: Implementare un metodo (GET) per recuperare l'elenco delle categorie
+
+        public async Task<PagedCollection<Category>> GetCategoriesAsync(int page = 1, int pageSize = 20)
+        {
+            return await _categoryRepository.GetAllAsync(page, pageSize);
+        }
     }
+
 }

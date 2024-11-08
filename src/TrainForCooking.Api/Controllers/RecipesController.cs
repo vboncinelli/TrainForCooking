@@ -32,12 +32,10 @@ namespace TrainForCooking.Api.Controllers
 
             return Ok(recipes);
         }
-        // TODO:
-        // 1 - Implementare uno o più metodi che restituiscano una lista di ricette (get)
-        //     Ci sono almeno due opzioni:
-        //     a) metodo per recuperare l'elenco delle ricette non filtrate per cateoria/cuisine 
-        //     b) metodo che accetta due parametri entrambi opzionali, uno per categoria e uno per cuisine
-        //
+
+
+
+
         // 2 - Opzionale: Implementare un metodo per creare una ricetta (post)
         // PS: Preferire, dove possibile, metodi asincroni (async, await, task)
 
